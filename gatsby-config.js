@@ -1,7 +1,11 @@
 module.exports = {
-  siteMetadata: {
-    title: `;allendrupal`,
-    siteUrl: `https://www.yourdomain.tld`
-  },
-  plugins: ["gatsby-plugin-sass"]
+    siteMetadata: {
+        title: `Allen Drupal Gatsby`,
+        siteUrl: `https://www.yourdomain.tld`,
+    },
+    plugins: [
+        'gatsby-plugin-sass',
+        'gatsby-plugin-image',
+        'gatsby-plugin-sharp',
+    ],
 };
