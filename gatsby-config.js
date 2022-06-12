@@ -15,7 +15,7 @@ module.exports = {
             resolve: `gatsby-source-drupal`,
             options: {
               baseUrl: `https://dev-allendrupal.pantheonsite.io/`,
-              apiBase: `api`, // optional, defaults to `jsonapi`
+              apiBase: `jsonapi`, // optional, defaults to `jsonapi`
             },
           },
     ],

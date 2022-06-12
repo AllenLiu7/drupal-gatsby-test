@@ -1,23 +1,26 @@
 import * as React from 'react'
 import { graphql } from "gatsby"
 import Layout from '../components/layout'
-import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { Link } from "gatsby"
+import {  GatsbyImage } from 'gatsby-plugin-image'
 import ReactHtmlParser from 'react-html-parser';
+
 
 const IndexPage = (query) => {
 
-  console.log(query.data.allNodeArticle.nodes);
-
-  
   return (
     <Layout pageTitle="Home Page">
-      {query.data.allNodeArticle.nodes.map(({body, id,title, relationships}) => {
-        return <div key={id}>
-          <h3>{title}</h3>
-          <GatsbyImage image={relationships.field_image.localFile.childImageSharp.gatsbyImageData} alt='image' />
-          <div>{ReactHtmlParser(body.value)}</div>
+      <div className='d-flex flex flex-wrap container justify-content-center'>
+      {query.data.allNodeArticle.nodes.map(({body, id,title, relationships, path}) => {
+        return <div key={id} className={`col-2 m-3 style.cardContainer`}>
+          <Link to={path.alias}>
+            <h3>{title}</h3>
+            <GatsbyImage image={relationships.field_image.localFile.childImageSharp.gatsbyImageData} alt='image' />
+            {/* <div className='mt-3'>{ReactHtmlParser(body?.value)}</div> */}
+          </Link>
         </div>
       })}
+      </div>
     </Layout>
   )
 }
@@ -28,6 +31,9 @@ export const query = graphql`
     nodes {
       body {
         value
+      }
+      path {
+        alias
       }
       title
       created
