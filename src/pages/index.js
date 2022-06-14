@@ -3,12 +3,19 @@ import { graphql } from "gatsby"
 import Layout from '../components/layout'
 import { Link } from "gatsby"
 import {  GatsbyImage } from 'gatsby-plugin-image'
+import { StaticImage } from "gatsby-plugin-image"
 import ReactHtmlParser from 'react-html-parser';
+
+import * as style from "../pages/index.module.css"
 
 
 const IndexPage = (query) => {
 
   return (
+    <>
+    <div className={style.hero}>
+    <StaticImage src="../images/hero.jpg" alt="A dinosaur" className={style.hero}/>
+    </div>
     <Layout pageTitle="Home Page">
       <div className='d-flex flex flex-wrap container justify-content-center'>
       {query.data.allNodeArticle.nodes.map(({body, id,title, relationships, path}) => {
@@ -22,6 +29,7 @@ const IndexPage = (query) => {
       })}
       </div>
     </Layout>
+    </>
   )
 }
 
