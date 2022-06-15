@@ -6,23 +6,23 @@ const FetchTest = () => {
 
   const [data, setData] = useState({ });
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(
-        'https://dev-allendrupal.pantheonsite.io/jsonapi/node/article',
-      );
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const result = await axios(
+  //       'https://dev-allendrupal.pantheonsite.io/jsonapi/node/article',
+  //     );
 
-      setData(result.data);
-    };
+  //     setData(result.data);
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
  //console.log(data)
 
   return (
     <Layout pageTitle="My Blog Posts">
-      <pre id="json">{JSON.stringify(data, undefined, 2)}</pre>
+      {/* <pre id="json">{JSON.stringify(data, undefined, 2)}</pre> */}
     </Layout>
   )
 }
