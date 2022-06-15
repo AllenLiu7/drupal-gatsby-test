@@ -4,7 +4,7 @@ const path = require(`path`)
 module.exports = {
     siteMetadata: {
         title: `drupalG`,
-        siteUrl: ``,
+        siteUrl: `https://allen-drupal-headless.netlify.app`,
     },
     plugins: [
         'gatsby-plugin-sass',
