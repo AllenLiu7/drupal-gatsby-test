@@ -19,7 +19,7 @@ const IndexPage = (query) => {
     <Layout pageTitle="Home Page">
       <div className='d-flex flex flex-wrap container justify-content-center'>
       {query.data.allNodeArticle.nodes.map(({body, id,title, relationships, path}) => {
-        return <div key={id} className={`col-2 m-3 style.cardContainer`}>
+        return <div key={id} className={`col-2 m-3 ${style.cardContainer}`}>
           <Link to={path.alias}>
             <h3>{title}</h3>
             <GatsbyImage image={relationships.field_image.localFile.childImageSharp.gatsbyImageData} alt='image' />

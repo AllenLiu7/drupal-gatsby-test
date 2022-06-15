@@ -6,7 +6,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const ArticlePage = (query) => {
 
-  console.log(query.data.nodeArticle);
+  //console.log(query.data.nodeArticle);
   return (
     <>
    
