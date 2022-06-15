@@ -23,7 +23,6 @@ const IndexPage = (query) => {
           <Link to={path.alias}>
             <h3>{title}</h3>
             <GatsbyImage image={relationships.field_image.localFile.childImageSharp.gatsbyImageData} alt='image' />
-            {/* <div className='mt-3'>{ReactHtmlParser(body?.value)}</div> */}
           </Link>
         </div>
       })}

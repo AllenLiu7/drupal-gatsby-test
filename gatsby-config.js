@@ -3,8 +3,8 @@ const path = require(`path`)
 
 module.exports = {
     siteMetadata: {
-        title: `Allen Drupal Gatsby`,
-        siteUrl: `https://www.yourdomain.tld`,
+        title: `drupalG`,
+        siteUrl: ``,
     },
     plugins: [
         'gatsby-plugin-sass',
